@@ -1,0 +1,10 @@
+{
+  "kind": "evm_contracts",
+  "contracts": [
+    {
+      "contract": "NightWatchSkin",
+      "constructorArgs": []
+    }
+  ],
+  "notes": "NightWatchSkin (src/NightWatchSkin.sol) is the only application contract: an immutable, stateless SVG renderer that draws the identity layer of NIGHT WATCHERS over each Night Watcher's card. Its constructor takes no arguments and depends on no caller, chain state or other contract. The single external function layer(uint256 n, uint8 t, uint16[10] inputs) is pure (stricter than the requested view), callable by anyone, and reverts unless 1 <= t <= 6 and n <= 9999 (n 0 with t 6 is The Captain). There is no owner, admin, storage, fee, token, pool, upgrade or pause path, no receive or fallback function, and it reads no other contract. Deployment sends zero ETH and needs no initialization call. Etherscan and Sourcify verification use the pinned foundry.toml settings (solc 0.8.26, via_ir, optimizer 200 runs, cancun, bytecode_hash none) with an empty constructor encoding."
+}
